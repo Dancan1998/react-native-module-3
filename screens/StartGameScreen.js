@@ -8,7 +8,7 @@ import {
   TouchableWithoutFeedback,
   Alert,
 } from "react-native";
-
+import NumberContainer from "../components/NumberContainer";
 import Card from "../components/Card";
 import Input from "../components/Input";
 import colors from "../constants/colors";
@@ -38,11 +38,18 @@ const StartGameScreen = () => {
     setConfirmed(true);
     setSelectedValue(chosenNumber);
     setEnteredValue("");
+    Keyboard.dismiss();
   };
 
   let confirmedOutput;
   if (confirmed) {
-    confirmedOutput = <Text>Chosen Number : {selectedValue}</Text>;
+    confirmedOutput = (
+      <Card style={styles.summaryContainer}>
+        <Text>You selected</Text>
+        <NumberContainer>{selectedValue}</NumberContainer>
+        <Button title="START GAME" />
+      </Card>
+    );
   }
 
   return (
@@ -114,5 +121,9 @@ const styles = StyleSheet.create({
   input: {
     width: 80,
     textAlign: "center",
+  },
+  summaryContainer: {
+    marginTop: 20,
+    alignItems: "center",
   },
 });
