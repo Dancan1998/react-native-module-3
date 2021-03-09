@@ -8,7 +8,13 @@ const GameOverScreen = (props) => {
     <View style={styles.screen}>
       <TitleText>The Game is Over!</TitleText>
       <View style={styles.imageContainer}>
-        <Image style={styles.image} source={require("../assets/success.png")} />
+        <Image
+          style={styles.image}
+          source={{
+            uri:
+              "https://images.pexels.com/photos/1770809/pexels-photo-1770809.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+          }}
+        />
       </View>
       <BodyText>Number of rounds : {props.roundsNumber}</BodyText>
       <BodyText>Number was : {props.userNumber}</BodyText>
@@ -16,7 +22,7 @@ const GameOverScreen = (props) => {
     </View>
   );
 };
-
+// source={require("../assets/success.png")}
 export default GameOverScreen;
 
 const styles = StyleSheet.create({
