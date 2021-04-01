@@ -13,6 +13,7 @@ import BodyText from "../components/BodyText";
 import TitleText from "../components/TitleText";
 import Card from "../components/Card";
 import Input from "../components/Input";
+import MainButton from "../components/MainButton";
 import colors from "../constants/colors";
 import DefaultStyles from "../constants/DefaultStyles";
 
@@ -50,7 +51,9 @@ const StartGameScreen = ({ onStartGame }) => {
       <Card style={styles.summaryContainer}>
         <Text>You selected</Text>
         <NumberContainer>{selectedValue}</NumberContainer>
-        <Button title="START GAME" onPress={() => onStartGame(selectedValue)} />
+        <MainButton onPress={() => onStartGame(selectedValue)}>
+          START GAME
+        </MainButton>
       </Card>
     );
   }
